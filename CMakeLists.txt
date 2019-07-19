@@ -43,7 +43,7 @@ function(sqliteMain)
   endforeach()
 
   target_include_directories(thirdparty_sqlite INTERFACE
-    "${CMAKE_CURRENT_SOURCE_DIR}"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src"
   )
 
   install(TARGETS thirdparty_sqlite DESTINATION lib)
