@@ -7,6 +7,8 @@
 cmake_minimum_required(VERSION 3.13.3)
 project(thirdparty_sqlite)
 
+option(SQLITE_GENERATE_INSTALL_TARGET "When enabled, will cause the project to create the install targets" OFF)
+
 function(sqliteMain)
   set(parameter_list
    "SQLITE_VERSION=3.29.0"
@@ -46,8 +48,10 @@ function(sqliteMain)
     "${CMAKE_CURRENT_SOURCE_DIR}/src"
   )
 
-  install(TARGETS thirdparty_sqlite DESTINATION lib)
-  install(FILES src/sqlite3ext.h src/sqlite3.h DESTINATION include)
+  if(SQLITE_GENERATE_INSTALL_TARGET)
+    install(TARGETS thirdparty_sqlite DESTINATION lib)
+    install(FILES src/sqlite3ext.h src/sqlite3.h DESTINATION include)
+  endif()
 endfunction()
 
 sqliteMain()
