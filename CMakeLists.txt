@@ -4,7 +4,7 @@
 # This source code is licensed in accordance with the terms specified in
 # the LICENSE file found in the root directory of this source tree.
 
-cmake_minimum_required(VERSION 3.13.3)
+cmake_minimum_required(VERSION 3.17.3)
 project(thirdparty_sqlite)
 
 option(SQLITE_ENABLE_INSTALL_TARGET "When enabled, will cause the project to create the install targets" OFF)
