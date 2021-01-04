@@ -13,7 +13,7 @@ option(SQLITE_ENABLE_RTREE_EXTENSION "Set to ON to enable the R*Tree module" OFF
 
 function(sqliteMain)
   set(parameter_list
-   "SQLITE_VERSION=3.31.1"
+   "SQLITE_VERSION=3.34.0"
    "SQLITE_MAX_VARIABLE_NUMBER=250000"
   )
 
