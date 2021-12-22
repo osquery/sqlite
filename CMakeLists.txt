@@ -4,7 +4,7 @@
 # This source code is licensed in accordance with the terms specified in
 # the LICENSE file found in the root directory of this source tree.
 
-cmake_minimum_required(VERSION 3.17.5)
+cmake_minimum_required(VERSION 3.21.4)
 project(thirdparty_sqlite)
 
 option(SQLITE_ENABLE_INSTALL_TARGET "When enabled, will cause the project to create the install targets" OFF)
@@ -13,7 +13,7 @@ option(SQLITE_ENABLE_RTREE_EXTENSION "Set to ON to enable the R*Tree module" OFF
 
 function(sqliteMain)
   set(parameter_list
-   "SQLITE_VERSION=3.36.0"
+   "SQLITE_VERSION=3.37.0"
    "SQLITE_MAX_VARIABLE_NUMBER=250000"
   )
 
