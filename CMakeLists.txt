@@ -4,7 +4,7 @@
 # This source code is licensed in accordance with the terms specified in
 # the LICENSE file found in the root directory of this source tree.
 
-cmake_minimum_required(VERSION 3.17.5)
+cmake_minimum_required(VERSION 3.21.4)
 project(thirdparty_sqlite)
 
 option(SQLITE_ENABLE_INSTALL_TARGET "When enabled, will cause the project to create the install targets" OFF)
@@ -13,19 +13,15 @@ option(SQLITE_ENABLE_RTREE_EXTENSION "Set to ON to enable the R*Tree module" OFF
 
 function(sqliteMain)
   set(parameter_list
-   "SQLITE_VERSION=3.39.2"
    "SQLITE_MAX_VARIABLE_NUMBER=250000"
   )
 
   set(option_list
     SQLITE_ENABLE_COLUMN_METADATA
     SQLITE_SECURE_DELETE
-    SQLITE_ENABLE_UNLOCK_NOTIFY
     SQLITE_ENABLE_DBSTAT_VTAB
-    SQLITE_ENABLE_JSON1
-    SQLITE_ENABLE_PREUPDATE_HOOK
-    SQLITE_ENABLE_SESSION
     SQLITE_SOUNDEX
+    SQLITE_ENABLE_EXPLAIN_COMMENTS
   )
 
   if(${SQLITE_ENABLE_RTREE_EXTENSION})
@@ -44,6 +40,7 @@ function(sqliteMain)
 
     list(APPEND option_list
       SQLITE_ENABLE_FTS3
+      SQLITE_ENABLE_FTS4
       SQLITE_ENABLE_FTS3_PARENTHESIS
       SQLITE_ENABLE_FTS5
     )
